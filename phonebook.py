@@ -15,3 +15,9 @@ class Phonebook(object):
 
     def get_numbers(self):
         return self.phonebook.values()
+
+    def delete_contact(self,name):
+        if name in self.phonebook.keys():
+            del self.phonebook[name]
+        else:
+            return []

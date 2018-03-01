@@ -21,4 +21,8 @@ class PhonebookTest(TestCase):
 
     def test_no_entry_of_number(self):
         self.assertEqual([],self.contact.get_numbers())
- 
+
+    def test_deletion_of_contact(self):
+        self.contact.add_contact('andela', '12345')
+        self.contact.delete_contact('andela')
+        self.assertEqual(self.contact.get_names(),[])
