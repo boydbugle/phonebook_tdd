@@ -11,7 +11,7 @@ class PhonebookTest(TestCase):
             self.contact.add_contact('whodat', '12345')
             self.assertIn('whodat', self.contact.get_names())
             self.assertIn('12345', self.contact.get_numbers())
-            
+
     def test_success_match(self):
         self.contact.add_contact('Bbug', '077')
         self.assertEqual('077',self.contact.success_entry('Bbug'))
@@ -21,3 +21,4 @@ class PhonebookTest(TestCase):
 
     def test_no_entry_of_number(self):
         self.assertEqual([],self.contact.get_numbers())
+ 
